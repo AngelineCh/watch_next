@@ -9,15 +9,14 @@ launch him into space to a planet where the Hulk can live in peace.
 Unfortunately, Hulk lands on the planet Sakaar where he is sold into slavery
 and trained as a gladiator.'''
 
-# creating nlp var from movie_description
-movie_nlp = nlp(movie_description)
 
 # main function, opens movies text file and creates new list to add results
 # for each movie in file comparing similarity with Hulk movie description and adds results to list
 # finding the index number of the max of the list and splitting the matching indexed movie in title and description
 # then printing the title
 
-def movies_recommendation():
+def movies_recommendation(movie_description):
+    movie_nlp = nlp(movie_description)
     with open ("movies.txt", "r", encoding="utf-8") as movies:
         movies = movies.readlines()
         similarity_list = []
@@ -30,5 +29,5 @@ def movies_recommendation():
         print("Movie recommentation based on your preferences:\n{}".format(title[0]))
     
 
-movies_recommendation()
+movies_recommendation(movie_description)
   
